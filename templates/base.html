@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<title>{{title}}</title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+
+	<style type="text/css">
+		.nexus{
+			
+			    background: black;
+
+		}
+		li{
+			display:inline-block;
+			padding: 10px;
+		}
+		.dd{
+			margin: 0px;
+			padding-top: 0px;
+			color:white;
+			text-align: center;
+			font-family: 'Caveat', cursive;
+			font-size: 20px;
+		}
+		.Lall{
+			margin: 0px;
+			padding-top: 5px;
+			color:white;
+			text-align: center;
+			font-family: 'Caveat', cursive;
+			font-size: 15px;
+		}
+		.aaa{
+			margin-top: 10px;
+			text-align: right;
+			color:white;
+			padding-right: 20px;
+		}
+		.ccc{
+			    width: 180px;
+		}
+		.navbar-inverse{
+			position:relative;
+			min-height: 0px;
+			margin-bottom: 0px;
+			margin-top:0px;
+
+			
+		}
+		.ggg{
+			color:red;
+
+		}
+		.nav,li{
+			padding: 0px;
+		}
+		.ice{
+			border-width: 1px;
+			border-color: #333;
+			text-align: center;
+			border-style: ridge;
+			padding: 0px;
+		}
+		.first{
+			color:orange;
+			font-size: 30px;
+		}
+		.ggg{
+			margin-top: 10px;
+			margin-right: 2px;
+
+			
+		}
+		#binu{
+			    opacity: 0.5;
+			    
+			}
+			#binu:hover
+			{opacity: 1;
+			}
+		.kanna{
+			color:green;
+			font-family: 'Sacramento', cursive;
+		}
+		.qu{
+			border-color: none;
+			text-align: justify;
+		}
+		.uuu{
+			margin-top:35px;
+		}
+		.zzz{
+			margin: 10px;
+
+		}
+		.xyz{
+			color:green;
+			font-size: 20px;
+		}
+		.riyaz{
+			margin-top: 20px;
+			margin-left: 100px;
+
+		}
+
+
+	</style>
+</head>
+<body>
+<div class="nexus">
+	<div class="row zoo">
+		<div class="col-sm-3">
+			<h1 class="dd">Neel's Cafe</h1>
+		</div>
+			<div class="col-sm-6">
+			<nav class="navbar navbar-inverse dd" >
+  				<div class="">
+					<div class="navbar-header">
+						 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						      <span class="icon-bar"></span>
+						      <span class="icon-bar"></span>
+						      <span class="icon-bar"></span> 
+						 </button>
+						   
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						 <ul class="nav navbar-nav">
+						    <li class=""><a href=" {% url 'web:home' %}">Home</a></li>
+						    <li><a href=" {%url 'web:aboutus' %}">About us</a></li>
+						    <li><a href=" {% url 'web:user_login' %}">Login</a></li>
+						     <li><a href=" {% url 'web:contact_us' %}">Contact us</a></li> 
+						 </ul>
+						      
+						     	
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="col-sm-3">
+			<ul class="Lall">
+				<li><span class="glyphicon glyphicon-signal"></span></li>
+				<li><span class="glyphicon glyphicon-envelope"></span></li>
+				<li><span class="glyphicon glyphicon-headphones"></span></li>
+			</ul>
+		</div>
+
+
+	</div>
+
+</div>
+
+{% block content %}
+
+{% endblock %}

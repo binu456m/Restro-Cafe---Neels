@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+{% load static %}
+
+
+
+ <style>
+ body {
+	background:url('static/images/C2.jpeg') no-repeat 0px 0px;
+	background-size: cover;
+	font-family: 'Open Sans', sans-serif;
+	background-attachment: fixed;
+    background-position: center;
+	}
+ 
+.container {
+	width:65%;
+	margin:50px auto;
+   }
+h1 {
+	text-align:center;
+	font-size:50px;
+	margin-bottom:50px;
+	color:#fff;
+	font-family: 'Muli', sans-serif;
+    }
+h2{
+	font-size:24px;
+	color:#fff;
+	margin-bottom:15px;
+}
+h3.w3ls{
+	font-size:24px;
+	color:#fff;
+	margin-bottom:15px;
+}
+h3{
+	font-size:15px;
+	color:#fff;
+	margin-bottom:10px;
+}
+.pen{
+	float:left;
+	width:48%;
+	margin-right:4%;
+}
+.cool{
+	background: rgba(255, 255, 255, 0.15);
+	padding:15px;
+	margin-bottom:20px;
+	}
+.tudu{
+	float:left;
+	width:48%;
+	}
+input[type="text"]{
+	width:95%;
+	padding:13px;
+	background:rgba(8, 8, 8, 0.14);
+	background: rgba(255, 255, 255, 0.15);
+	background:#fff;
+	border:none;
+	outline:none;
+	font-size:14px;
+	color: black;
+}
+input[type="submit"]{
+	background:transparent;
+	border:2px solid #000;
+	padding:8px 15px;
+	font-size:14px;
+	color:#fff;
+	cursor:pointer;
+	outline:none;
+		transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	font-family: 'Open Sans', sans-serif;
+}
+input[type="submit"]:hover{
+	background: #000;
+}
+textarea{
+	width:94%;
+	padding:15px;
+	background: #fff;
+	border:none;
+	outline:none;
+	resize:none;
+	height:150px;
+	font-size:14px;
+	color: black;
+}
+
+.map iframe {
+    width: 100%;
+    min-height: 17em;
+    border: none;
+    }
+
+input.subscribe{
+	margin-bottom:15px;
+}
+
+.socialicons{
+	text-align:center;
+	background:#fff;
+}
+.socialicons ul li{
+	display:inline-block;
+}
+.socialicons ul li a{
+	height:45px;
+	width:50px;
+    background:url('static/images/img-sprite.png') no-repeat 0px 0px;
+	display:inline-block;
+	border:none;
+	transition: 0.5s all;
+	webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+.socialicons ul li a.twitter{
+	background:url('static/images/img-sprite.png') no-repeat -50px 0px;
+}
+.socialicons ul li a.google{
+	background:url('static/images/img-sprite.png') no-repeat -100px 0px;
+}
+.socialicons ul li a.pinterest{
+	background:url('static/images/img-sprite.png') no-repeat -150px 0px;
+}
+.socialicons ul li a.linkedin{
+	background:url('static/images/img-sprite.png') no-repeat -200px 0px;
+}
+.socialicons ul li a.facebook:hover{
+	background:url('static/images/img-sprite.png') no-repeat 0px -50px;
+}
+.socialicons ul li a.twitter:hover{
+	background:url('static/images/img-sprite.png') no-repeat -50px -50px;
+	
+}
+
+.socialicons ul li a.google:hover{
+	background:url('static/images/img-sprite.png') no-repeat -100px -50px;
+	
+}
+.socialicons ul li a.pinterest:hover{
+	background:url('static/images/img-sprite.png') no-repeat -150px -50px;
+
+}
+.socialicons ul li a.linkedin:hover{
+	background:url('static/images/img-sprite.png') no-repeat -200px -50px;
+}
+.footer-w3l{
+	margin-top:40px;
+}
+ p.agileinfo{
+	font-size:14px;
+	color:#fff;
+	text-align:center;
+	line-height:22px;
+}
+
+ </style>
+ <body>
+ 	<div class="container">
+ 		<h1> contact us </h1>
+ 		<title>{{title}}</title>
+ 		
+ 		<div class="pen">
+			<h2>Contact Us!</h2>
+			<form action="{{url}}" method="post">
+				<div class="cool">
+					{% csrf_token %}
+					{% for field in form %}
+						<h3>{{field}}</h3>
+					{% endfor %}
+					
+				</div>
+				
+				<input type="submit" value="Send Message">
+			</form>
+		</div>
+
+		<div class="tudu">
+			<h3 class="w3ls">Subscribe</h3>
+			<form action="{{urls}}" method="post">
+				<div class="cool">
+					{% csrf_token %}
+					{% for field in forms %}
+					<h3>{{field}}</h3>
+					{% endfor %}
+					
+				</div>
+				<input type="submit"  class="subscribe" value="Subscribe">
+			</form>
+			<h3 class="w3ls">Our Location</h3>
+			<div class="cool">
+				<h3>Reach Us</h3>
+				<div class="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31517.03193107373!2d76.53599136929876!3d9.097521282287381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0604a1417c1c03%3A0x5bf4419de369b42c!2sThazhava%2C+Kerala!5e0!3m2!1sen!2sin!4v1516424800656" width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>	
+			</div>
+			<h3 class="w3ls">Stay In Touch</h3>
+			<div class="">
+				<h3>Social Icons</h3>
+				<div class="socialicons w3">
+					<ul>
+						<li><a class="facebook" href="#"></a></li>
+						<li><a class="twitter" href="#"></a></li>
+						<li><a class="google" href="#"></a></li>
+						<li><a class="pinterest" href="#"></a></li>
+						<li><a class="linkedin" href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+
+
+ 	</div>
+ </body>
+ </html>
+
+{% block static %}
+{% endblock %}
+{% endblock %}

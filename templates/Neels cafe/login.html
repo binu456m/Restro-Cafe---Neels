@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+{% load i18n %}
+{% load static %}
+<head>
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Amatic+SC|Marck+Script" rel="stylesheet">
+
+<style>
+	.aaa {
+			margin: 0px;
+			margin-top: 20px;
+			padding-top: 10px;
+			color:white;
+			padding-right: 25px;
+			text-align: center;
+			font-family: 'Marck Script', cursive;
+			font-size: 45px;
+		}
+		.bbb{
+			color:white;
+			text-align: center;
+			padding-top: 20px;
+			font-family: 'Amatic SC', cursive;
+
+		}
+		.ccc{
+			color:white;
+			font-size: 20px;
+			font-family: 'Amatic SC', cursive;
+		}
+		.zzz{
+			 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			 padding: 50px;
+		}
+		#jack{
+			margin-top: 200px;
+		}
+		p{
+			margin-top: 10px;
+    		margin-bottom: 10px;
+    		text-align: right;
+		}
+		span{
+			color:orange;
+		}
+
+</style>
+</head>
+<body background="{% static 'images/cappuccino.jpg' %}">
+	<div class=container>
+		<div class="row">
+			<div class="col-sm-12">
+			<h1 class="aaa"> <span>N</span>eel's <span>C</span>afe - <span>C</span>offee @ <span>H</span>eaven </h1>
+	     
+	</div>
+
+	<div class="container">
+		<div class="row" id="jack">
+			<div class="col-sm-3"></div>
+			
+			<div class="col-sm-6">
+				<div class="zzz">
+
+  					<h2 class="bbb">Login Here</h2>
+  			
+  					<form id="form-work" class="" name="form-work" action="." method="post">
+  						{% csrf_token %}
+   			   			<div class="form-group">
+      		      	 		<label for="username"> </label>
+      		     	 		<input type="username" class="form-control" id="username" placeholder="user name" name="username">
+      		     	 		<label class="form-control-label has-success" for="inputSuccess1">{{ form.username.errors }}</label>
+               			</div>
+
+    		   			<div class="form-group">
+      			   			<label for="pwd"> </label>
+      			   			<input type="password" class="form-control" id="pwd" placeholder="Password" name="password">
+      			   			<label class="form-control-label has-success" for="inputSuccess1">{{ form.password.errors }}</label>
+    		   			</div>
+
+    		   			<div class="row">
+    		   		
+							<div class="col-sm-6">
+								<div class="checkbox ccc">
+      			    				<label><input type="checkbox" name="remember" class="ccc"> Remember me</label>
+								</div>
+							</div>
+    		   		
+    		   				<div class="col-sm-6">
+    		   					<div class="ccc"> <p>Forgot Password ?</p>
+								</div>
+
+    						</div>
+    					</div>
+    		   		
+
+    					<button type="submit" class="btn btn-default">Submit</button>
+    					<input type="hidden" name="next" value="{{ next }}" />
+
+  					</form>
+  				</div>
+  			</div>
+		<div>
+
+
+
+
+</body>
+</html>
